@@ -23,6 +23,7 @@ def auth_user(username, password, list_of_users)
     end
 end
 
+# logic
 attempts = 1
 while attempts < 4
     puts "Username: "
@@ -39,3 +40,4 @@ while attempts < 4
     # increment attempts
     attempts += 1
 end
+puts "You have ran out of attempts" if attempts == 4
