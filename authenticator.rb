@@ -12,6 +12,17 @@ puts
 puts "This program will ask for a username and password."
 puts "It will return the user object is username and password are correct"
 
+# method
+def auth_user(username, password, list_of_users)
+    list_of_users.each do |user_record|
+        if user_record[:username] == username && user_record[:password] == password
+            return user_record
+        else 
+            puts "Credentials were not correct"
+        end
+    end
+end
+
 attempts = 1
 while attempts < 4
     puts "Username: "
@@ -19,13 +30,7 @@ while attempts < 4
     puts "Password: "
     password = gets.chomp
     # loop through user array to authenticate
-    users.each do |user|
-        if user[:username] == username && user[:password] == password
-            puts user
-        else 
-            puts "Credentials were not correct"
-        end
-    end
+    puts auth_user(username, password, users)
     # check to see if the user wants to keep going
     puts "Press n to quit or any other key to keep going:"
     input = gets.chomp.downcase
