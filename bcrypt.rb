@@ -11,6 +11,8 @@ my_password = BCrypt::Password.new('$2a$10$abbXFj6bBN2QL9aaeB2jk.RObVpJ6NkhvFLRd
 
 # create a module
 module Auth
+    require 'bcrypt'
+    puts "Module Auth Acitvated"
     # methods to create and verify hash
     def create_hash_digest(password)
         BCrypt::Password.create(password)
